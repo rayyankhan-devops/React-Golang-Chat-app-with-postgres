@@ -197,6 +197,37 @@ docker run -d \
 
 ---
 
+## 🌐 Complete Docker Network Commands Cheat-Sheet
+
+Docker Networks allow containers to discover each other by container name (e.g. `chatapp-backend` connecting to `local-postgres`).
+
+| Action | Command | Explanation |
+| :--- | :--- | :--- |
+| **Create Network** | `docker network create chat-app-network` | Creates a custom bridge network |
+| **List Networks** | `docker network ls` | Displays all active Docker networks |
+| **Inspect Network** | `docker network inspect chat-app-network` | Shows connected containers & IP addresses |
+| **Connect Container** | `docker network connect chat-app-network <container-name>` | Connects a running container to network |
+| **Disconnect Container**| `docker network disconnect chat-app-network <container-name>` | Disconnects a container from network |
+| **Remove Network** | `docker network rm chat-app-network` | Deletes a custom network (when no containers attached) |
+| **Prune Unused Networks**| `docker network prune` | Removes all unused Docker networks |
+
+---
+
+## 💾 Complete Docker Volume Commands Cheat-Sheet
+
+Docker Volumes persist your database data independently of container lifecycles (so PostgreSQL data isn't lost when containers are deleted).
+
+| Action | Command | Explanation |
+| :--- | :--- | :--- |
+| **Create Named Volume**| `docker volume create postgres-data` | Creates a persistent named volume |
+| **List Volumes** | `docker volume ls` | Lists all volumes stored by Docker |
+| **Inspect Volume** | `docker volume inspect postgres-data` | Shows host storage mount path (`/var/lib/docker/volumes/...`) |
+| **Mount Volume** | `docker run -v postgres-data:/var/lib/postgresql/data ...` | Mounts volume inside PostgreSQL container |
+| **Remove Volume** | `docker volume rm postgres-data` | Deletes a volume and all its stored data |
+| **Prune Unused Volumes**| `docker volume prune` | Deletes all unattached volumes |
+
+---
+
 ## 🧪 Verification & Inspection Commands
 
 ### Check All Running Containers

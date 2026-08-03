@@ -5,6 +5,12 @@
 .Spotlight-V100
 .Trashes
 
+# Images / Screenshots
+*.png
+*.jpg
+*.jpeg
+*.gif
+
 # Node.js / React
 node_modules/
 frontend/node_modules/
